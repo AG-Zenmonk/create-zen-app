@@ -1,21 +1,21 @@
 {
   "name": "my-app-agdoie",
-  "version": "1.0.3",
-  "description": "trying to create mys npx app",
-  "main": "index.js",
-  "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.js"
-  },
+  "version": "1.0.11",
+  "description": "trying to create my npx app",
+  "main": "bin/create-app.js",
   "author": "",
   "license": "ISC",
   "bin": {
-    "create-boilerplate": "./create-app.js"
+    "create": "./bin/create-app.js"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
     "rimraf": "^5.0.7"
   },
-  "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
   }
 }
