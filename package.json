@@ -1,11 +1,21 @@
 {
-  "name": "my-app",
-  "version": "1.0.0",
+  "name": "my-app-agdoie",
+  "version": "1.0.3",
   "description": "trying to create mys npx app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel index.html",
+    "build": "parcel build index.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+    "create-boilerplate": "./create-app.js"
+  },
+  "dependencies": {
+    "rimraf": "^5.0.7"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
 }
