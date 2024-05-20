@@ -1,6 +1,6 @@
 {
-  "name": "my-app-agdoie",
-  "version": "1.0.13",
+  "name": "my-next-template",
+  "version": "1.1.0",
   "description": "trying to create my npx app",
   "main": "bin/create-app.js",
   "author": "",
