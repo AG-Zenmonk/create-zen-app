@@ -1,3 +1,6 @@
+#!/usr/bin/env node
+
+// rest of the code
 const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
@@ -31,10 +34,8 @@ async function main() {
         process.chdir(projectPath);
 
         console.log('Installing dependencies...');
-        execSync('cd client && npm install');
-        execSync('cd ../server && npm install');
-        execSync('cd ..');
-
+        execSync('cd frontend && npm install');
+        
         console.log('Removing useless files');
         execSync('npx rimraf ./.git');
         fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
