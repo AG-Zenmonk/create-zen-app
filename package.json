@@ -1,6 +1,6 @@
 {
   "name": "my-next-template",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "trying to create my npx app",
   "main": "bin/create-app.js",
   "author": "",

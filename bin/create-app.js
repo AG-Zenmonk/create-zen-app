@@ -8,7 +8,7 @@ const fs = require('fs');
 if (process.argv.length < 3) {
     console.log('You have to provide a name to your app.');
     console.log('For example :');
-    console.log('    npx create-my-boilerplate my-app');
+    console.log('    npx my-next-template my-app');
     process.exit(1);
 }
 const projectName = process.argv[2];
@@ -35,7 +35,7 @@ async function main() {
 
         console.log('Installing dependencies...');
         execSync('cd frontend && npm install');
-        
+
         console.log('Removing useless files');
         execSync('npx rimraf ./.git');
         fs.rmdirSync(path.join(projectPath, 'bin'), { recursive: true });
