@@ -3,7 +3,7 @@ const readline = require('readline');
 const { execSync } = require('child_process');
 const path = require('path');
 const fs = require('fs');
-
+let package;
 //check for dir name argv
 if (process.argv.length < 3) {
     console.log('You have to provide a name to your app.');
@@ -41,17 +41,23 @@ async function main() {
 
         process.chdir(projectPath);
 
+        
         console.log('Installing dependencies...');
-        execSync('cd frontend && npm install');
-
+        execSync('npm install');
+        
         console.log('Removing useless files');
         execSync('npx rimraf ./.git');
-        fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
-
+        // fs.rmSync(path.join(projectPath, 'bin'), { recursive: true });
+        
         console.log('The installation is done, this is ready to use !');
 
+        package = require('./package.json')
+        package["name"]=projectName
+        console.log('package: ', package);
     } catch (error) {
         console.log(error);
+        fs.rmSync(projectPath, { recursive: true });
+
     }
 }
 
@@ -64,7 +70,7 @@ rl.question('Which directory do you want to install Zen-ui-next-tempelete(Yes/No
         }
         else {
             console.log('===Operation Terminated successfully===');
-            fs.rmdirSync(projectPath);
+            fs.rmSync(projectPath, { recursive: true });
         }
     } catch (error) {
         console.log('Error executing command:', error);
